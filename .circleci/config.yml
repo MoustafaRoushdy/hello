@@ -8,9 +8,9 @@ jobs:
 
     steps:
       - checkout
-      - restore-cache:
-          keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+      # - restore-cache:
+      #     keys:
+      #       - v1-dependencies-{{ checksum "requirements.txt" }}
       - run:
           name: install dependencies
           command: |
