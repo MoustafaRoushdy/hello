@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - restore-cache:
-        keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
+          keys:
+            - v1-dependencies-{{ checksum "requirements.txt" }}
       - run:
           name: install dependencies
           command: |
@@ -18,9 +18,9 @@ jobs:
             . venv/bin/activate
             make install
       - save-cache:
-        paths:
-          ~ ./venv
-        key: v1-dependencies-{{ checksum "requirements.txt" }}
+          paths:
+            ~ ./venv
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
       
       - run:
           name: Run lint
